@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>페이지별 글 작성 & 모아보기</title>
+
+<style>
+    @font-face {
+        font-family: 'ansim';
+        src: url(HakgyoansimMabeopsaOTFR\ 복사본.otf) format(opentype);
+    }
+
+    @font-face {
+        font-family: 'mapo';
+        src: url(MapoBackpacking\ 복사본.otf) format(opentype);
+    }
+    html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;  /* 전체 페이지 스크롤 차단 */
+  height: 100%;
+}
+
+  .page {
+    display: none;
+    padding: 20px;
+  }
+  .page.active {
+    display: block;
+  }
+  .title{
+    
+    position: absolute;
+    
+    z-index: 999;
+  }
+  .back{
+    background-color: #fff697;
+  }
+
+  .editable {
+    position: absolute;
+    top: 40vh;
+    left: 4vw;
+  width: 90%;
+  height: 350px;
+  padding: 10px;
+  font-size: 3rem;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background-color: #fff;
+  overflow-x: hidden;
+  font-family: 'mapo';
+}
+
+  #summary {
+    white-space: pre-wrap;
+    padding: 10px;
+    margin-top: 0px;
+    font-size: 1vw;
+    overflow-y: hidden;
+    font-family: 'mapo';
+
+  }
+  .button {
+    font-family: 'ansim';
+    position: absolute;
+    background-color: rgb(223, 28, 28);
+    margin: 8px 3px;
+    padding: 30px 50px;
+    color: rgb(64, 11, 11);
+    font-size: 4rem;
+    text-align: center;
+    border-radius: 40px;
+    cursor: pointer;
+    user-select: none;
+    left: 40vw;
+    top: 70vh;
+    z-index: 999;
+  }
+  .button :hover {
+   color: #fff;
+}
+  .button2 {
+    font-family: 'ansim';
+    position: absolute;
+    background-color: rgb(247, 247, 247);
+    margin: 8px 3px;
+    padding: 30px 50px;
+    color: rgb(64, 11, 11);
+    font-size: 4rem;
+    text-align: center;
+    border-radius: 40px;
+    cursor: pointer;
+    user-select: none;
+    left: 40vw;  /* 위치 조정 필요하면 변경 */
+    top: 70vh;
+    z-index: 999;
+  }
+  .button3 {
+    font-family: 'ansim';
+    position: absolute;
+    background-color: rgb(241, 37, 37);
+    margin: 3px 3px;
+    padding: 40px 30px;
+    color: rgb(64, 11, 11);
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+    left: 90vw;  /* 위치 조정 필요하면 변경 */
+    top: 85vh;
+    z-index: 999;
+  }
+  .button4 {
+    font-family: 'ansim';
+    position: absolute;
+    background-color:  rgb(241, 37, 37);
+    margin: 8px 3px;
+    padding: 30px 50px;
+    color: rgb(64, 11, 11);
+    font-size: 4rem;
+    text-align: center;
+    border-radius: 40px;
+    cursor: pointer;
+    user-select: none;
+    left: 80vw;  /* 위치 조정 필요하면 변경 */
+    top: 85vh;
+    z-index: 999;
+  }
+  
+</style>
+</head>
+<body>
+    <div id="page1" class="page active">
+        <div class="title" style="left: 33vw; top: 30vh; font-size: 7vw; font-family: 'ansim';">너의 나이는</div>
+        <img src="cat.png" style="position: absolute; top: 0%; left: -5%; width: 110%;">
+      
+        <div class="button" onclick="nextPage(2)">바로가기</div>
+      </div>
+      
+      <div id="page2" class="page">
+        
+        <img src="tototo.png" style="position: absolute; top: 0%; left: 0%; width: 110%;">
+        <div class="title"  style="left: 25vw; top: 40vh; font-size: 3vw; text-align: center;font-family: 'mapo';">글을 읽고 다음장에 이야기를 요약해주세요.<br>
+            앞으로 다시 돌아올 수 없으니<br>
+            꼼꼼히 읽어주세요.</div>
+            <div class="button2" onclick="nextPage(3)">다음</div>
+      </div>
+      <div id="page3" class="page">
+        
+        <div class="back" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: -1;"></div>
+        <div class="title"  style="left: 5vw; top: 6vh; font-size: 1.9vw; width: 90vw;  text-align: left;font-family: 'mapo';">
+            서울시립대에는 모두가 알고 있는 고양이 건공이가 있다. 몇년 전부터 교내에 살고 있는데 언제부터인지는 아무도 모른다. 10년전이라는 사람도 있고 20년 전이라는 사람도 있다. 건공이는 건설공학관 주변에서 많이 발견되어 건공이라 불리는 건데 최근에는 인문학관, 빨간 벽돌 갤러리까지 자유롭게 돌아다닌다. 
+            <p>어느 날은 시립대를 졸업한지 30년된 남자가 오랜만에 학교에 방문하였다. 그는 천천히 캠퍼스를 거닐다가 노란색 치즈냥이를 발견하였다. 옆에 같이 온 부인이 그 고양이를 가리키며 말했다. “얘 이름은 건공이. 시립대에 사는 고양이래.”  남자는 깜짝 놀랐다. “건공이? 건공이라고? 내가 학교 다닐 때에 있던 그 치즈냥이?” 부인은 놀랐다. “뭐? 당신이 학교 다닐 때도 있었다고?” 남자는 믿을 수 없었다. 약 30년 전에 있던 고양이가 아직까지 살아 있을 리 만무했다. ‘에이 설마 비슷한 고양이겠지..’ 속으로 생각했지만 눈의 색깔, 발바닥의 무늬, 목의 목걸이까지 모두 똑같았다. </p> 
+            졸업생이 방문하고 며칠 뒤 건공이에 대한 이상한 소문이 퍼지기 시작했다. “야, 너 들었어? 30년 전에 다녔던 졸업생이 이번에 학교 와서 건공이 보고 놀랐대.”
+            “진짜? 그때도 있었던 고양이라던데…”
+            “근데 웃긴 게 뭔지 알아? 이름이랑, 고양이 눈 색깔, 발바닥 무늬까지 그대로래. 심지어 목걸이도 똑같았대.”
+            처음엔 다들 웃어넘겼다.
+            "에이, 고양이 수명이 몇 년인데. 그냥 비슷한 애겠지."
+            하지만 이런 말이 한두 명에게서만 나온 게 아니었다.
+            “나 조교 형한테 들었어. 예전 학과 행사 사진 찾아봤는데, 거기에도 지금 건공이랑 똑같이 생긴 고양이 있대.”
+            “어쩐지 건공이 나이가 20살이다 할 때 부터 알아봤어. 근데 고양이가 20살 넘게 살 수 있나?” </p>
+            그렇게 건공이가 오랜 과거부터 살아온 고양이라는 루머가 퍼졌다. 하지만 그날 졸업생이 기억하고 있던 고양이는 사실 건공이가 맞지만 건공이가 아니었다. 그러니까 건공이가 맞지만 건공이의 엄마 고양이었던 것이다. 건공이의 엄마 고양이의 이름도 사실 건공이었다. 그리고 엄마묘가 죽고 새끼인 현재의 건공이에게 그 목걸이를 채워주면서 같은 목걸이와 같은 이름이 이어진 것이었다. 
+            
+            
+                
+    
+        </div>
+            <div class="button3" onclick="nextPage(4)">다음</div>
+      </div>
+      
+      <div id="page4" class="page">
+        <div class="title"  style="left: 23vw; top: 10vh; font-size: 4vw; text-align: center;font-family: 'mapo';">앞의 이야기를 3줄로 요약해주세요.
+            <br><span style="font-size: 2vw;">(앞으로 돌아갈 수 없습니다!)</span></div>
+            <img src="jigle.png" style="position: absolute; top: 0%; left: 0%; width: 110%;">
+        <div id="text3" class="editable" contenteditable="true" placeholder="여기에 글을 쓰세요"></div><br />
+        <div class="button3" onclick="nextPage(5)">다음</div>
+      </div>
+      
+      <div id="page5" class="page">
+        <div class="title"  style="left: 23vw; top: 10vh; font-size: 4vw; text-align: center;font-family: 'mapo';">앞의 이야기를 2줄로 요약해주세요.
+            <br><span style="font-size: 2vw;">(앞선 문장과 다른 단어를 이용해주세요!)</span></div>
+            <img src="jigle2.png" style="position: absolute; top: 0%; left: 0%; width: 110%;">
+        <div id="text4" class="editable" contenteditable="true" placeholder="여기에 글을 쓰세요"></div><br />
+        <div class="button3" onclick="nextPage(6)">다음</div>
+      </div>
+      
+      <div id="page6" class="page">
+        <div class="title"  style="left: 23vw; top: 10vh; font-size: 4vw; text-align: center;font-family: 'mapo';">앞의 이야기를 1줄로 요약해주세요.
+            <br><span style="font-size: 2vw;">(앞으로 돌아갈 수 없습니다!)</span></div>
+            <img src="jigle3.png" style="position: absolute; top: 0%; left: 0%; width: 110%;">
+        <div id="text5" class="editable" contenteditable="true" placeholder="여기에 글을 쓰세요"></div><br />
+        <div class="button3" onclick="nextPage(7)">다음</div>
+      </div>
+      
+      <div id="page7" class="page">
+        <div class="title"  style="left: 23vw; top: 10vh; font-size: 4vw; text-align: center;font-family: 'mapo';">앞의 이야기를 두 단어로 요약해주세요.
+            <br><span style="font-size: 2vw;">(앞으로 돌아갈 수 없습니다!)</span></div>
+            <img src="bg4.png" style="position: absolute; top: 0%; left: 0%; width: 110%;">
+        <div id="text6" class="editable" contenteditable="true" placeholder="여기에 글을 쓰세요"></div><br />
+        <div class="button3" onclick="nextPage(8)">다음</div>
+      </div>
+      
+      <div id="page8" class="page">
+        <div class="title"  style="left: 14vw; top: 10vh; font-size: 4vw; text-align: center;font-family: 'mapo';">두 단어를 이용해 새로운 사실을 만들어 주세요.
+            <br><span style="font-size: 2vw;">(앞으로 돌아갈 수 없습니다!)</span></div>
+            <img src="jigle5.png" style="position: absolute; top: 0%; left: 0%; width: 110%;">
+        <div id="text7" class="editable" contenteditable="true" placeholder="여기에 글을 쓰세요"></div><br />
+        <div class="button3" onclick="showSummary()">다음</div>
+      </div>
+      
+      
+      <div id="summary" style="display:none;">
+        <div class="title"  style="left: 02vw; top: 2vh; font-size: 4vw; text-align: center;font-family: 'mapo';" >루머 생성 과정</div>
+        <div id="allTexts"style="padding-top: 5vh;"></div>
+        <div class="back" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: -1;"></div>
+        <a href="index.html" class="button4" style="text-decoration: none;">끝내기</a>
+      </div>
+      
+      <script>
+        function nextPage(num) {
+          document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+          document.getElementById('summary').style.display = 'none';
+          document.getElementById('page' + num).classList.add('active');
+        }
+      
+        function showSummary() {
+  const texts = [];
+
+  // 각 페이지에 표시할 문장 지정 (인덱스는 i - 3에 대응)
+  const titles = [
+    '3줄 요약',        // text3 → 페이지 1
+    '2줄 요약',          // text4 → 페이지 2
+    '1줄 요약',      // text5 → 페이지 3
+    '두 단어 요약',    // text6 → 페이지 4
+    '새로운 사실', // text7 → 페이지 5
+    
+  ];
+
+  for (let i = 3; i <= 8; i++) {
+    const input = document.getElementById('text' + i);
+    if (input) {
+      let val = '';
+      if (input.tagName === 'TEXTAREA') {
+        val = input.value.trim();
+      } else {
+        val = input.innerText.trim();
+      }
+
+      const title = titles[i - 3] || `페이지 ${i - 2}`;
+      texts.push(`<div style="font-size: 2vw; margin-bottom: 2em;"><strong>${title}</strong><br>${val.replace(/\n/g, '<br>')}</div>`);
+    }
+  }
+
+  document.getElementById('allTexts').innerHTML = texts.join('<hr style="border: none; border-top: 1px solid #000000; margin: 30px 0;">');
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('summary').style.display = 'block';
+}
+
+
+      
+        function closeSummary() {
+          document.getElementById('summary').style.display = 'none';
+          nextPage(1);
+        }
+      </script>
+      
+      
+</body>
+</html>

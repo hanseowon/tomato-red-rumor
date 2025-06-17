@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>페이지별 글 작성 & 모아보기</title>
+
+<style>
+    @font-face {
+        font-family: 'ansim';
+        src: url(HakgyoansimMabeopsaOTFR\ 복사본.otf) format(opentype);
+    }
+
+    @font-face {
+        font-family: 'mapo';
+        src: url(MapoBackpacking\ 복사본.otf) format(opentype);
+    }
+  .page {
+    display: none;
+    padding: 20px;
+  }
+  .page.active {
+    display: block;
+  }
+  .title{
+    
+    position: absolute;
+    
+    z-index: 999;
+  }
+  .back{
+    background-color: #fff697;
+  width: 100%;
+  height: 100%;
+  z-index: 0; 
+  position: absolute; 
+  top: 0;
+  left: 0;
+  }
+
+  .editable {
+    position: absolute;
+    top: 40vh;
+    left: 4vw;
+  width: 90%;
+  height: 350px;
+  padding: 10px;
+  font-size: 3rem;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  background-color: #fff;
+  overflow-y: hidden;
+  overflow-x: hidden;
+  font-family: 'mapo';
+}
+
+  #summary {
+    white-space: pre-wrap;
+    padding: 10px;
+    margin-top: 0px;
+    font-size: 1vw;
+    overflow-x: hidden;
+    font-family: 'mapo';
+  }
+  .button {
+    font-family: 'ansim';
+    position: absolute;
+    background-color: rgb(223, 28, 28);
+    margin: 8px 3px;
+    padding: 30px 50px;
+    color: rgb(64, 11, 11);
+    font-size: 4rem;
+    text-align: center;
+    border-radius: 40px;
+    cursor: pointer;
+    user-select: none;
+    left: 40vw;  /* 위치 조정 필요하면 변경 */
+    top: 70vh;
+    z-index: 999;
+  }
+  .button2 {
+    font-family: 'ansim';
+    position: absolute;
+    background-color: rgb(247, 247, 247);
+    margin: 8px 3px;
+    padding: 30px 50px;
+    color: rgb(64, 11, 11);
+    font-size: 4rem;
+    text-align: center;
+    border-radius: 40px;
+    cursor: pointer;
+    user-select: none;
+    left: 40vw;  /* 위치 조정 필요하면 변경 */
+    top: 70vh;
+    z-index: 999;
+  }
+  .button3 {
+    font-family: 'ansim';
+    position: absolute;
+    background-color: rgb(241, 37, 37);
+    margin: 3px 3px;
+    padding: 40px 30px;
+    color: rgb(64, 11, 11);
+    font-size: 2rem;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+    left: 90vw;  /* 위치 조정 필요하면 변경 */
+    top: 85vh;
+    z-index: 999;
+  }
+  .button4 {
+    font-family: 'ansim';
+    position: absolute;
+    background-color:  rgb(241, 37, 37);
+    margin: 8px 3px;
+    padding: 30px 50px;
+    color: rgb(64, 11, 11);
+    font-size: 4rem;
+    text-align: center;
+    border-radius: 40px;
+    cursor: pointer;
+    user-select: none;
+    left: 80vw;
+    top: 85vh;
+    z-index: 999;
+  }
+  
+</style>
+</head>
+<body>
+    <div id="page1" class="page active">
+        <div class="title" style="left: 22vw; top: 30vh; font-size: 7vw; font-family: 'ansim';">이루매는 살아있다</div>
+        <div class="back"></div>
+      
+        <div class="button" onclick="nextPage(2)">바로가기</div>
+      </div>
+      
+      <div id="page2" class="page">
+        
+        <img src="tototo.png" style="position: absolute; top: 0%; left: 0%; width: 110%;">
+        <div class="title"  style="left: 25vw; top: 40vh; font-size: 3vw; text-align: center;font-family: 'mapo';">글을 읽고 다음장에 이야기를 요약해주세요.<br>
+            앞으로 다시 돌아올 수 없으니<br>
+            꼼꼼히 읽어주세요.</div>
+            <div class="button2" onclick="nextPage(3)">다음</div>
+      </div>
+      <div id="page3" class="page">
+        
+        <div class="back" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: -1;"></div>
+        <div class="title"  style="left: 5vw; top: 7vh; font-size: 2vw; width: 90vw;  text-align: left;font-family: 'mapo';">
+            <span style="font-size: 3vw;">이제</span> 막 학교에 입학한 새내기인 학생 B는 학교의 마스코트인 이루매가 너무 마음에 들었다. 그래서 그는 이루매 동상이 놓인 학생회관 앞을 좋아했다. 학관 앞을 지나칠 때면 항상 동상을 거쳐서 지나가곤 했다.
+            <p>그 날도 평소와 수업을 마치고 기숙사로 돌아가는 길이었다. 해가 질 무렵, 학생회관 옆을 지나던 그는 평소처럼 이루매 동상에 시선을 한 번 주었다. 동상은 늘 그러했듯 정면을 바라보고 있었다. </p>
+            <p>그리고 다음날 B는 알바를 끝내고 10시쯤에 학생회관 옆을 지나게 되었다. 그는 무심결에 동상을 쳐다보다 약간 멈칫하였다. 묘하게 계단 위쪽, 그러니까 B가 서있는 쪽을 쳐다보고 있는 것 같았다. 뭔가 이상한 것 같았지만 어둡기도 했고 피곤도해서 기분 탓이라 생각하고 넘겼다.  
+        </p>또 다음날이 되었다. 어제 일이 있어서 밤 늦게 돌아가고 싶지는 않았지만 조 모임때문에 또다시 학관 옆을 지나게 되었다. 
+            그 때 계단 아래에서 소리가 났다. “끼이익 끼이익..” 소리에 놀란 B는 아래를 쳐다보았고 순간 동상이 B쪽을 향해 움직이고 있는 것을 발견하였다. B는 너무 놀란 나머지 뒤도 돌아보지 않고 기숙사를 향해 뛰었다. 
+            그리고 그날 이후 밤이 되면 이루매 동상이 움직인다는 소문이 돌았다. 목격자는 B 한 명 뿐이었지만 어째서 동상의 위치가 매일같이 달라지는 것 같다는 이야기가 퍼져갔다. 
+            <p>사실은 이루매가 실제로 움직인 것은 맞았다. 그러나 스스로 움직인 것은 아니었다. 며칠 전 동상 주변에서 에어팟 한 쪽을 떨어뜨린 학생C가 매일 같이 조심스레 주변을 살피며 동상을 움직이고 있던 것이었다. 그런데 마침 밤이라 어두웠고 B는 멀리 있어 C를 보지 못하여 생긴 오해였다. </p>
+            
+                
+    
+        </div>
+            <div class="button3" onclick="nextPage(4)">다음</div>
+      </div>
+      
+      <div id="page4" class="page">
+        <div class="title"  style="left: 23vw; top: 10vh; font-size: 4vw; text-align: center;font-family: 'mapo';">앞의 이야기를 3줄로 요약해주세요.
+            <br><span style="font-size: 2vw;">(앞으로 돌아갈 수 없습니다!)</span></div>
+            <img src="jigle.png" style="position: absolute; top: 0%; left: 0%; width: 110%;">
+        <div id="text3" class="editable" contenteditable="true" placeholder="여기에 글을 쓰세요"></div><br />
+        <div class="button3" onclick="nextPage(5)">다음</div>
+      </div>
+      
+      <div id="page5" class="page">
+        <div class="title"  style="left: 23vw; top: 10vh; font-size: 4vw; text-align: center;font-family: 'mapo';">앞의 이야기를 2줄로 요약해주세요.
+            <br><span style="font-size: 2vw;">(앞선 문장과 다른 단어를 이용해주세요!)</span></div>
+            <img src="jigle2.png" style="position: absolute; top: 0%; left: 0%; width: 110%;">
+        <div id="text4" class="editable" contenteditable="true" placeholder="여기에 글을 쓰세요"></div><br />
+        <div class="button3" onclick="nextPage(6)">다음</div>
+      </div>
+      
+      <div id="page6" class="page">
+        <div class="title"  style="left: 23vw; top: 10vh; font-size: 4vw; text-align: center;font-family: 'mapo';">앞의 이야기를 1줄로 요약해주세요.
+            <br><span style="font-size: 2vw;">(앞으로 돌아갈 수 없습니다!)</span></div>
+            <img src="jigle3.png" style="position: absolute; top: 0%; left: 0%; width: 110%;">
+        <div id="text5" class="editable" contenteditable="true" placeholder="여기에 글을 쓰세요"></div><br />
+        <div class="button3" onclick="nextPage(7)">다음</div>
+      </div>
+      
+      <div id="page7" class="page">
+        <div class="title"  style="left: 23vw; top: 10vh; font-size: 4vw; text-align: center;font-family: 'mapo';">앞의 이야기를 두 단어로 요약해주세요.
+            <br><span style="font-size: 2vw;">(앞으로 돌아갈 수 없습니다!)</span></div>
+            <img src="bg4.png" style="position: absolute; top: 0%; left: 0%; width: 110%;">
+        <div id="text6" class="editable" contenteditable="true" placeholder="여기에 글을 쓰세요"></div><br />
+        <div class="button3" onclick="nextPage(8)">다음</div>
+      </div>
+      
+      <div id="page8" class="page">
+        <div class="title"  style="left: 14vw; top: 10vh; font-size: 4vw; text-align: center;font-family: 'mapo';">두 단어를 이용해 새로운 사실을 만들어 주세요.
+            <br><span style="font-size: 2vw;">(앞으로 돌아갈 수 없습니다!)</span></div>
+            <img src="jigle5.png" style="position: absolute; top: 0%; left: 0%; width: 110%;">
+        <div id="text7" class="editable" contenteditable="true" placeholder="여기에 글을 쓰세요"></div><br />
+        <div class="button3" onclick="showSummary()">다음</div>
+      </div>
+      
+      
+      <div id="summary" style="display:none;">
+        <div class="title"  style="left: 02vw; top: 2vh; font-size: 4vw; text-align: center;font-family: 'mapo';" >루머 생성 과정</div>
+        <div id="allTexts"style="padding-top: 5vh;"></div>
+        <div class="back" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; z-index: -1;"></div>
+        <a href="index.html" class="button4" style="text-decoration: none;">끝내기</a>
+      </div>
+      
+      <script>
+        function nextPage(num) {
+          document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+          document.getElementById('summary').style.display = 'none';
+          document.getElementById('page' + num).classList.add('active');
+        }
+      
+        function showSummary() {
+  const texts = [];
+
+  // 각 페이지에 표시할 문장 지정 (인덱스는 i - 3에 대응)
+  const titles = [
+    '3줄 요약',        // text3 → 페이지 1
+    '2줄 요약',          // text4 → 페이지 2
+    '1줄 요약',      // text5 → 페이지 3
+    '두 단어 요약',    // text6 → 페이지 4
+    '새로운 사실', // text7 → 페이지 5
+    
+  ];
+
+  for (let i = 3; i <= 8; i++) {
+    const input = document.getElementById('text' + i);
+    if (input) {
+      let val = '';
+      if (input.tagName === 'TEXTAREA') {
+        val = input.value.trim();
+      } else {
+        val = input.innerText.trim();
+      }
+
+      const title = titles[i - 3] || `페이지 ${i - 2}`;
+      texts.push(`<div style="font-size: 2vw; margin-bottom: 2em;"><strong>${title}</strong><br>${val.replace(/\n/g, '<br>')}</div>`);
+    }
+  }
+
+  document.getElementById('allTexts').innerHTML = texts.join('<hr style="border: none; border-top: 1px solid #000000; margin: 30px 0;">');
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('summary').style.display = 'block';
+}
+
+
+      
+        function closeSummary() {
+          document.getElementById('summary').style.display = 'none';
+          nextPage(1);
+        }
+      </script>
+      
+      
+</body>
+</html>
